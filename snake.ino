@@ -68,13 +68,13 @@ int check_movement(int last_direction) {
   accelgyro.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
 
   // decodificam directia
-  if (ax > LIMIT)
+  if (ax > LIMIT / 2)
     return UP;
-  if (ax < -LIMIT)
+  if (ax < -LIMIT / 2)
     return DOWN;
-  if (ay < -LIMIT)
+  if (ay < -LIMIT / 3)
     return RIGHT;
-  if (ay > LIMIT)
+  if (ay > LIMIT /3)
     return LEFT;
 
   return last_direction;
